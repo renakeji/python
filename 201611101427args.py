@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: renakeji
 # @Date:   2016-11-10 14:27:36
-# @Last Modified by:   renakeji
-# @Last Modified time: 2016-11-10 14:59:33
+# @Last Modified by:   kn
+# @Last Modified time: 2016-11-10 19:06:35
 #
 # 1.多参数
 #
@@ -57,19 +57,29 @@
 #
 # 4.元组，字典参数
 #
-def cheeseshop(kind, *arguments, **keywords):
-    print("-- Do you have any", kind, "?")
-    print("-- I'm sorry, we're all out of", kind)
-    for arg in arguments:
-        print(arg)
-    print("-" * 40)
-    keys = sorted(keywords.keys())
-    # keys = keywords.keys() # 打印顺序随机
-    for kw in keys:
-        print(kw, ":", keywords[kw])
+# def cheeseshop(kind, *arguments, **keywords):
+#     print("-- Do you have any", kind, "?")
+#     print("-- I'm sorry, we're all out of", kind)
+#     for arg in arguments:
+#         print(arg)
+#     print("-" * 40)
+#     keys = sorted(keywords.keys())
+#     # keys = keywords.keys() # 打印顺序随机
+#     for kw in keys:
+#         print(kw, ":", keywords[kw])
 
-cheeseshop("Limburger", "It's very runny, sir.",
-           "It's really very, VERY runny, sir.",
-           shopkeeper="Michael Palin",
-           client="John Cleese",
-           sketch="Cheese Shop Sketch")
+# cheeseshop("Limburger", "It's very runny, sir.",
+#            "It's really very, VERY runny, sir.",
+#            shopkeeper="Michael Palin",
+#            client="John Cleese",
+#            sketch="Cheese Shop Sketch")
+#
+# 5.
+#
+def parrot(voltage, state='a stiff', action='voom'):
+        print("-- This parrot wouldn't", action, end=' ')
+        print("if you put", voltage, "volts through it.", end=' ')
+        print("E's", state, "!")
+
+d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+parrot(**d)  #This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !
